@@ -21,6 +21,7 @@ runs:
           python3 /home/kpit/actions-runner/_work/_actions/bhushanvelis/actions/v1/testAction/writeJson.py \
             --github-repository="${{ inputs.repository }}" \
             --github-token="${{ inputs.token }}"
+          echo "this is the working directory" 
           pwd
         shell: bash
   
