@@ -12,13 +12,13 @@ runs:
   using: "composite"
   steps:
       - uses: actions/checkout@v3
-        #working-directory: ./actions
+        working-directory: ${{ github.action_path }}
       - run: |
           echo ${{ github.workspace }}
           echo $GITHUB_WORKSPACE
         shell: bash
       - run: |
-          python3 /home/kpit/actions-runner/_work/_actions/bhushanvelis/actions/v1/testAction/writeJson.py \
+          python3 writeJson.py \
             --github-repository="${{ inputs.repository }}" \
             --github-token="${{ inputs.token }}"
           echo "this is the working directory" 
