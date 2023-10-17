@@ -20,7 +20,8 @@ runs:
       - run: |
           python3 $GITHUB_ACTION_PATH/writeJson.py \
             --github-repository="${{ inputs.repository }}" \
-            --github-token="${{ inputs.token }}"
+            --github-token="${{ inputs.token }}"\
+            --github-workingDir="${{ github.workspace }}"
           echo "this is the working directory" 
           echo ${{ github.action_path }}
           pwd
