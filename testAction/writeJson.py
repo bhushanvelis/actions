@@ -13,7 +13,7 @@ print(f" >> {arguments.github_workingDir}")
 print(f">> {parser_github.title}")
 print(f">> {parser}")
 
-'''
+cwd = str(arguments.github_workingDir) + '/' + 'sample.json'
 # Data to be written
 dictionary = {
 "name": "Bhushan",
@@ -25,6 +25,5 @@ dictionary = {
 json_object = json.dumps(dictionary, indent=4)
      
 # Writing to sample.json
-with open("sample.json", "w") as outfile:
+with open(cwd, "w") as outfile:
     outfile.write(json_object)
-'''
