@@ -1,14 +1,13 @@
 name: 'Hello World'
 description: 'Greet someone'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
-    required: true
-    default: 'World'
-outputs:
-  random-number:
-    description: "Random number"
-    value: ${{ steps.random-number-generator.outputs.random-number }}
+  repository:
+    description: "repo owner / name"
+    default: ${{ github.repository }}
+  token:
+    description: "github token"
+    default: ${{ github.token }}
+
 runs:
   using: "composite"
   steps:
@@ -16,6 +15,11 @@ runs:
       - run: |
           echo ${{ github.workspace }}
           echo $GITHUB_WORKSPACE
+        shell: bash
+       -run: |
+          python3 writeJson.py \
+            --github-repository="${{ inputs.repository }}" \
+            --github-token="${{ inputs.token }}"
         shell: bash
   
 
