@@ -16,10 +16,10 @@ runs:
           echo ${{ github.workspace }}
           echo $GITHUB_WORKSPACE
         shell: bash
-       -run: |
-          python3 writeJson.py \
-            --github-repository="${{ inputs.repository }}" \
-            --github-token="${{ inputs.token }}"
-        shell: bash
+      -run: |
+        python3 writeJson.py \
+          --github-repository="${{ inputs.repository }}" \
+          --github-token="${{ inputs.token }}"
+      shell: bash
   
 
