@@ -7,7 +7,6 @@ inputs:
   token:
     description: "github token"
     default: ${{ github.token }}
-  env:
   
 runs:
   using: "composite"
