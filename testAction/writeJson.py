@@ -7,12 +7,9 @@ parser_github.add_argument("-gt", "--github-token")
 parser_github.add_argument("-gr", "--github-repository")
 
 
-if __name__ == "__main__":
-    arguments = parser.parse_args()
-
-    print(f" >> {arguments.github_repository}")
-    print(f">> {parser_github.title}")
-    print(f">> {parser}")
+print(f" >> {arguments.github_repository}")
+print(f">> {parser_github.title}")
+print(f">> {parser}")
 
     '''
     # Data to be written
