@@ -1,30 +1,16 @@
-name: 'Hello World'
-description: 'Greet someone'
+name: "Custom Test Action"
+description: "A reusable GitHub Action for testing on a self-hosted runner"
+author: "bhushanls"
+
 inputs:
-  repository:
-    description: "repo owner / name"
-    default: ${{ github.repository }}
-  token:
-    description: "github token"
-    default: ${{ github.token }}
-  
+  message:
+    description: "Message to display"
+    required: false
+    default: "Hello from Custom Action"
+
 runs:
   using: "composite"
   steps:
-      - uses: actions/checkout@v3
-        #working-directory: ${github.action_path}
-      - run: |
-          echo ${{ github.workspace }}
-          echo $GITHUB_WORKSPACE
-        shell: bash
-      - run: |
-          python3 $GITHUB_ACTION_PATH/writeJson.py \
-            --github-repository="${{ inputs.repository }}" \
-            --github-token="${{ inputs.token }}"\
-            --github-workingDir="${{ github.workspace }}"
-          echo "this is the working directory" 
-          echo ${{ github.action_path }}
-          pwd
-        shell: bash
-  
-
+    - name: Print message
+      run: echo "${{ inputs.message }}"
+      shell: bash
