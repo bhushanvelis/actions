@@ -36,7 +36,8 @@ runs:
           --user "${{ inputs.jfrog-username }}" \
           --access-token "${{ inputs.jfrog-token }}" \
           --interactive=false \
-          --overwrite 
+          --overwrite \
+          --enc-password=false
 
     - name: Upload Artifact
       shell: bash
