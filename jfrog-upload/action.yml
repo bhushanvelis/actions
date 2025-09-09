@@ -7,7 +7,7 @@ inputs:
   jfrog-username:
     description: "JFrog username"
     required: true
-  jfrog-token:
+  jfrog-password:
     description: "JFrog access token"
     required: true
   repo:
@@ -34,7 +34,7 @@ runs:
         jfrog config add my-server \
           --artifactory-url "${{ inputs.jfrog-url }}" \
           --user "${{ inputs.jfrog-username }}" \
-          --access-token "${{ inputs.jfrog-token }}" \
+          --password "${{ inputs.jfrog-password }}" \
           --interactive=false \
           --overwrite \
           --enc-password=false
