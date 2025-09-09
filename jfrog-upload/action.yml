@@ -34,7 +34,7 @@ runs:
         jfrog config add my-server \
           --artifactory-url "${{ inputs.jfrog-url }}" \
           --user "${{ inputs.jfrog-username }}" \
-          --password "${{ inputs.jfrog-password }}" \
+          --password-stdin
           --interactive=false
 
     - name: Upload Artifact
