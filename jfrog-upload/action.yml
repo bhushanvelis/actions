@@ -40,7 +40,7 @@ runs:
           --interactive=false \
           --overwrite \
           --enc-password=false
-        OUTPUT=$(jfrog c show)
+        jfrog c show
         echo "jfrog connection status ==> $OUTPUT" 
 
     - name: Upload Artifact
