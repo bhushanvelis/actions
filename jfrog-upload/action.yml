@@ -37,7 +37,6 @@ runs:
           --user "${{ inputs.jfrog-username }}" \
           --apikey  "${{ inputs.jfrog-key }}" \
           --interactive=false \
-          --overwrite \
           --enc-password=false
         OUTPUT=$(jfrog rt ping)
         jfrog c show
