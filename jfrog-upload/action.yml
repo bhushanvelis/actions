@@ -7,7 +7,7 @@ inputs:
   jfrog-username:
     description: "JFrog username"
     required: true
-  jfrog-password:
+  jfrog-key:
     description: "JFrog access token"
     required: true
   repo:
@@ -34,7 +34,7 @@ runs:
         jfrog config add my-server \
           --artifactory-url "${{ inputs.jfrog-url }}" \
           --user "${{ inputs.jfrog-username }}" \
-          --password "${{ inputs.jfrog-password }}" \
+          --apikey  "${{ inputs.jfrog-key }}" \
           --interactive=false \
           --overwrite \
           --enc-password=false
@@ -42,5 +42,5 @@ runs:
     - name: Upload Artifact
       shell: bash
       run: |
-        jfrog rt u "${{ inputs.file }}" "${{ inputs.repo }}/${{ inputs.target-path }}/"
+        jfrog rt u "${{ inputs.file }}" "${{ inputs.target-path }}"
 
