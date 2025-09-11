@@ -35,6 +35,7 @@ runs:
         jfrog config add my-server \
           --artifactory-url "${{ inputs.jfrog-url }}" \
           --user "${{ inputs.jfrog-username }}" \
+          --password bhushan123
           --apikey  "${{ inputs.jfrog-key }}" \
           --interactive=false \
           --overwrite \
