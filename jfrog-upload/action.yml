@@ -39,12 +39,7 @@ runs:
           --overwrite \
           --enc-password=false
         OUTPUT=$(jfrog c show)
-        echo "--artifactory-url ::remove-mask:: "${{ inputs.jfrog-url }}" \
-          --user "::remove-mask:: ${{ inputs.jfrog-username }}" \
-          --apikey ::remove-mask:: "${{ inputs.jfrog-key }}" \
-          --interactive=false \
-          --overwrite \
-          --enc-password=false " 
+        echo "jfrog connection status ==> $OUTPUT" 
 
     - name: Upload Artifact
       shell: bash
