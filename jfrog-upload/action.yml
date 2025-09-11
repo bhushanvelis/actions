@@ -31,13 +31,6 @@ runs:
     - name: Configure JFrog CLI
       shell: bash
       run: |
-        jfrog config add my-server \
-          --artifactory-url http://localhost:7000/artifactory \
-          --user admin \
-          --apikey AKCpBvWUa7JPuuicSK3piDztxKxPUK8jv8w5PzutGVZ8uuVkPGmrDJWvJKvyngcuyUbWtvDqz \
-          --interactive=false \
-          --enc-password=false \
-          --overwrite
         #jfrog config add my-server \
          # --artifactory-url "${{ inputs.jfrog-url }}" \
           #--user "${{ inputs.jfrog-username }}" \
