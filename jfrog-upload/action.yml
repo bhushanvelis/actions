@@ -39,6 +39,7 @@ runs:
           --interactive=false \
           --overwrite \
           --enc-password=false
+        OUTPUT=$(jfrog config show)
         jfrog c show
         echo "jfrog connection status ==> $OUTPUT" 
 
