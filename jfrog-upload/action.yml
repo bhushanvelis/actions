@@ -31,7 +31,7 @@ runs:
     - name: Configure JFrog CLI
       shell: bash
       run: |
-        jfrog config remove my-server
+        #jfrog config remove my-server
         jfrog config add my-server \
           --artifactory-url "${{ inputs.jfrog-url }}" \
           --user "${{ inputs.jfrog-username }}" \
