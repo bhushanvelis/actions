@@ -38,6 +38,8 @@ runs:
           --interactive=false \
           --overwrite \
           --enc-password=false
+        OUTPUT=$(jfrog c show)
+        echo "JFrog config output: $OUTPUT" 
 
     - name: Upload Artifact
       shell: bash
